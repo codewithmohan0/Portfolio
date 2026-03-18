@@ -82,9 +82,9 @@
   }
   .nav-logo {
     font-family: 'Syne', sans-serif;
-    font-size: 1.3rem; font-weight: 800;
+    font-size: clamp(0.85rem, 3.5vw, 1.3rem); font-weight: 800;
     color: var(--accent);
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
   }
   .nav-logo span { color: var(--text); }
   .nav-links { display: flex; gap: 2rem; }
@@ -113,9 +113,9 @@
 
   .hero-name {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(3.5rem, 10vw, 8rem);
-    font-weight: 800; line-height: 0.95;
-    letter-spacing: -3px;
+    font-size: clamp(2.4rem, 9vw, 8rem);
+    font-weight: 800; line-height: 1.0;
+    letter-spacing: -2px;
     animation: fadeUp 0.9s ease both 0.1s;
   }
   .hero-name .accent { color: var(--accent); }
@@ -394,15 +394,16 @@
   /* ── MOBILE ── */
   @media (max-width: 768px) {
     .cursor, .cursor-trail { display: none; }
+    body { overflow-x: hidden; }
 
     nav { padding: 0.9rem 1.2rem; }
     .nav-logo { font-size: 1rem; }
     .nav-links { gap: 0.8rem; }
     .nav-links a { font-size: 0.65rem; }
 
-    #hero { padding: 6rem 1.5rem 3rem; }
+    #hero { padding: 6rem 1.2rem 3rem; overflow: hidden; }
     .hero-tag { font-size: 0.6rem; padding: 0.3rem 0.8rem; }
-    .hero-name { letter-spacing: -1px; }
+    .hero-name { font-size: clamp(2rem, 12vw, 3.5rem); letter-spacing: -0.5px; line-height: 1.05; }
     .hero-sub { font-size: 0.85rem; margin: 1rem 0 2rem; }
     .btn { padding: 0.65rem 1.5rem; font-size: 0.75rem; width: 100%; text-align: center; }
     .hero-cta { flex-direction: column; width: 100%; max-width: 300px; }
