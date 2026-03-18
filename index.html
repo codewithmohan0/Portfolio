@@ -391,11 +391,54 @@
   .lang-css { background: rgba(100,154,210,0.15); color: #64a6d4; border: 1px solid rgba(100,154,210,0.3); }
   .lang-other { background: rgba(150,150,150,0.1); color: var(--muted); border: 1px solid var(--border); }
 
-  @media (max-width: 600px) {
-    nav { padding: 1rem 1.2rem; }
-    .nav-links { gap: 1rem; }
-    .stats-bar { gap: 1.5rem; }
-    .profile-card { flex-direction: column; align-items: flex-start; }
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .cursor, .cursor-trail { display: none; }
+
+    nav { padding: 0.9rem 1.2rem; }
+    .nav-logo { font-size: 1rem; }
+    .nav-links { gap: 0.8rem; }
+    .nav-links a { font-size: 0.65rem; }
+
+    #hero { padding: 6rem 1.5rem 3rem; }
+    .hero-tag { font-size: 0.6rem; padding: 0.3rem 0.8rem; }
+    .hero-name { letter-spacing: -1px; }
+    .hero-sub { font-size: 0.85rem; margin: 1rem 0 2rem; }
+    .btn { padding: 0.65rem 1.5rem; font-size: 0.75rem; width: 100%; text-align: center; }
+    .hero-cta { flex-direction: column; width: 100%; max-width: 300px; }
+
+    .orb1 { width: 200px; height: 200px; left: -20%; }
+    .orb2 { width: 150px; height: 150px; right: -10%; }
+    .orb3 { display: none; }
+
+    .stats-bar { gap: 1rem; padding: 1.5rem 1rem; }
+    .stat-num { font-size: 1.6rem; }
+    .stat-label { font-size: 0.58rem; }
+
+    section { padding: 3rem 1.2rem; }
+    .section-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+
+    .projects-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+    #contrib-section { padding: 1.2rem; }
+    .contrib-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    #lang-chips { justify-content: flex-start !important; max-width: 100% !important; }
+
+    .profile-card { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.2rem; }
+    .profile-info h2 { font-size: 1.2rem; }
+    .profile-info p { font-size: 0.75rem; max-width: 100%; }
+
+    .terminal-body { font-size: 0.7rem; padding: 1rem; line-height: 1.8; }
+    .terminal-title { font-size: 0.6rem; }
+
+    footer { padding: 2rem 1.2rem; font-size: 0.6rem; }
+  }
+
+  @media (max-width: 480px) {
+    .nav-links a:nth-child(3),
+    .nav-links a:nth-child(4) { display: none; }
+    .nav-links { gap: 0.6rem; }
+    .stats-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
   }
 </style>
 </head>
@@ -509,7 +552,7 @@
       <h2 class="section-title">Who am I?</h2>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;flex-wrap:wrap;" class="reveal">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;" class="reveal">
       <div>
         <div class="profile-card" id="profile-card">
           <div class="profile-avatar" id="profile-avatar">M</div>
